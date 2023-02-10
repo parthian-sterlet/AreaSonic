@@ -1,0 +1,2 @@
+aquamarine	chriz_GSM1147251	AreaVar	5748	14078400	AreaConst	3863	8906852	Ncyc	5000	Real	6950.760	PvalueLarger	0	PvalueSmaller	1.000000	Av	1059.596877	SD	40.369877	Zsco	145.929677	-Log10[Pval_approx]	4626.51
+chriz_GSM1147251	aquamarine	AreaVar	3863	8906852	AreaConst	5748	14078400	Ncyc	5000	Real	6950.760	PvalueLarger	0	PvalueSmaller	1.000000	Av	1059.620106	SD	41.342050	Zsco	142.497526	-Log10[Pval_approx]	4411.54
