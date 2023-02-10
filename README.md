@@ -68,7 +68,7 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 |----------------------|--------------------------------|---------|
 | AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total count of regions, total length of regions in bp
 | AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total count of regions, total length of regions in bp
-| Ncyc                 |                                | Number of iterations
+| Ncyc                 | 5000                           | Number of iterations
 | Real                 | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
 | PvalueLarger         | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
 | PvalueSmaller        | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
