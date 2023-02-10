@@ -68,7 +68,7 @@ void ProbelToTab(char *d)
 int main(int argc, char *argv[])
 {
 	char din[10000],**dout;
-	char filei[80], fileo[80], file_sta[80];
+	char filei[500], fileo[500], file_sta[500];
 	FILE *out, *in;
 	if(argc!=9)
 	{
