@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#SBATCH --mem 50M
+#SBATCH -p general
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -t 500:00:00
+
+./area_shuffling.exe AP2EREBP_CBF4_col_a chr_lengths.txt all 1000 as2.txt as2.dist chr_name.txt
