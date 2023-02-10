@@ -5,7 +5,7 @@ AreaSonic program estimates the significance (P-value) of an overlap between two
 
 Scheme of AreaSonic algorithm is given below
 
-![scheme](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/AreaSonic_github.png)
+
 
 # Requirements
 AreaSonic source code is written in C++ language. To compile exetubables from the source code you need:
