@@ -549,7 +549,7 @@ int main(int argc, char *argv[])
 		z_score*= -1;
 	}
 	fprintf(out, "%s\t%s\tAreaVar\t%d\t%d\tAreaConst\t%d\t%d\tNcyc\t%d\t", filearea_var_base, filearea_const_base, total_count_var, string_area_var_len, total_count_const, string_area_const_len, n_cyc);
-	fprintf(out, "Real\t%.3f\tPvalueLarger\t%g\tPvalueSmaller\t%f\tAv\t%f\tSD\t%f\tZsco\t%f\tLog10[Pval_approx]\t%g\n", real, (double)better / n_cyc, 1 - (double)better / n_cyc, rand_av, rand_sd, z_score, pval_approx);
+	fprintf(out, "Real\t%.3f\tPvalueLarger\t%g\tPvalueSmaller\t%f\tAv\t%f\tSD\t%f\tZsco\t%f\t-Log10[Pval_approx]\t%g\n", real, (double)better / n_cyc, 1 - (double)better / n_cyc, rand_av, rand_sd, z_score, pval_approx);
 	fclose(out);
 	if((outd=fopen(fileod,"at"))==NULL)
 	{
