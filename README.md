@@ -75,4 +75,4 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 | Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
 | SD                   | 41.342050                      | Standard deviation of expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
 | Zsco                 | 142.497526                     | Z-score of expected overlap length between fixed and permuted tracks, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
-| -Log10[Pval]  | 4411.54                        | P-value in logarithmic scale, estimation the significance of the total overlap length
+| -Log10[Pval]  | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between two tracks
