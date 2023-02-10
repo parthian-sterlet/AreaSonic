@@ -43,11 +43,32 @@ separate compilation of all source files in VC++
 
 Modules **Partition of a genome track by separate chromosomes** and **Permutations** should run consequently if input files are given as whole-genome track, if they are already partitioned by chromosomes, the second module **Permutations** can be used alone
 
+# How to run separate modules
+Lists of command line arguments for all modules are described below
+
 ## 1. Partition of a genome track by separate chromosomes
 This is just a parsing of a bed formatted file according to values in the first column designating chromosomes
+[tabnslolbik_wordget.cpp](https://github.com/parthian-sterlet/areasonic/blob/master/src/tabnslolbik_wordget.cpp)
+
+Command line arguments:
+1. input file, text table
+2. output file, processed text table
+3. int number of criteria
+4. int list of columns numbers, comma separated 
+5. char list of words respecting columns 
+6. int match type: 1 exact coincidence (word in a column exactly equal to given input word), 0 only occurrence (substring in a string is enough)
+7. int contain type: 0/1 mean searches of lines containing / do not containing words 
+8. int logic: 1 means stringent requirement for criteria in all columns, 0 means mild requirement for only one of criteria in at least one of columns
 
 ## 2. Permutations
 The main part of algorithm performing Monte Carlo simulation
+[area_shuffling.cpp](https://github.com/parthian-sterlet/areasonic/blob/master/src/area_shuffling.cpp)
 
-# How to run separate modules
-Lists of command line arguments for all modules are described below
+Command line arguments:
+1. input file in BED format, permuted track 
+2. input file, the list of chromosome lengths 
+3. input file in BED format, fixed track 
+4. integer number of iterations, minimal 100, at least 500 is required for stable results
+5. output file, statistical estimates for the overlap length between two tracks
+6. output file, distribution of expected overlap length 
+7. input file, list of chromosome names
