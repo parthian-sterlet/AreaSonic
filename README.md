@@ -12,3 +12,5 @@ Multiple iterations allow to estimate the expected overlap length Exp and its st
 Z = (Obs - Exp) / SD. Positive/negative imply the enrichment/depletion in overlaps between two tracks. asymptotic expansion of the complementary error function 
 The Areasonic program was successively applied earlier in [Khoroshko et al. (2016)](https://doi.org/10.1371/journal.pone.0157147) and 
 [Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines)
+Scheme of AreaSonic algorithm is given below
+![scheme]https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/AreaSonic_github.png
