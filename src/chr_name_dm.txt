@@ -1,5 +1,5 @@
-chr2L
 chr2R
-chr3L
+chr2L
 chr3R
+chr3L
 chrX
