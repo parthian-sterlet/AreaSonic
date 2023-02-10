@@ -51,10 +51,10 @@ print "$cmd\n";
 system $cmd;
 }
 
-$cmd= "./area_shuffling.exe	${file1}	chr_lengths_${ext_len}.txt	${file2}	${iter}	${file_out_txt}	${file_out_dist}	chr_name_${ext_nam}.txt";
+$cmd= "./area_shuffling.exe	${file1}	chr_length_${ext_len}.txt	${file2}	${iter}	${file_out_txt}	${file_out_dist}	chr_name_${ext_nam}.txt";
 print "$cmd\n";
 system $cmd;
 
-$cmd= "./area_shuffling.exe	${file2}	chr_lengths_${ext_len}.txt	${file1}	${iter}	${file_out_txt}	${file_out_dist}	chr_name_${ext_nam}.txt";
+$cmd= "./area_shuffling.exe	${file2}	chr_length_${ext_len}.txt	${file1}	${iter}	${file_out_txt}	${file_out_dist}	chr_name_${ext_nam}.txt";
 print "$cmd\n";
 system $cmd;
