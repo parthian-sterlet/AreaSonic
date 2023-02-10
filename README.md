@@ -17,6 +17,18 @@ Scheme of AreaSonic algorithm is given below
 
 ![scheme](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/AreaSonic_github.png)
 
+# Requirements
+AreaSonic source code is written in C++ language. To compile exetubables from the source code you need:
+
+* In Linux system, C++ compiler, e.g. [GCC](https://gcc.gnu.org/) compiler 
+* In Windiws system any VC++ package, e.g. [Microsoft Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
+
+# Input data
+Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns are critically important, they represent a notations of chromosomes and left/right positions of genomic regions. 
+
+# Source code
+Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) contains files with AreaSonic source codes, they respect to decribed below separate modules of pipeline.
+
 # How to compile
 * In Linux system: 
 
@@ -28,3 +40,14 @@ chmod a+x build.sh\
 * In Windiws system:
 
 separate compilation of all source files in VC++
+
+Modules **Partition of a genome track by separate chromosomes** and **Permutations** should run consequently if input files are given as whole-genome track, if they are already partitioned by chromosomes, the second module **Permutations** can be used alone
+
+## 1. Partition of a genome track by separate chromosomes
+This is just a parsing of a bed formatted file according to values in the first column designating chromosomes
+
+## 2. Permutations
+The main part of algorithm performing Monte Carlo simulation
+
+# How to run separate modules
+Lists of command line arguments for all modules are described below
