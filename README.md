@@ -16,3 +16,15 @@ The Areasonic program was successively applied earlier in [Khoroshko et al. (201
 Scheme of AreaSonic algorithm is given below
 
 ![scheme](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/AreaSonic_github.png)
+
+# How to compile
+* In Linux system: 
+
+git clone https://github.com/parthian-sterlet/areasonic \
+cd areasonic\src\
+chmod a+x build.sh\
+./build.sh
+
+* In Windiws system:
+
+separate compilation of all source files in VC++
