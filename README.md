@@ -64,16 +64,15 @@ Command line arguments:
 7. input file, list of chromosome names
 
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example run of AreaSonic for tracks of (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as permuted one. The output [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/as.txt) lists the following results as follows.
-| Label               | Value                          | Meaning
-| :---                |:---                            | :---  
-| AreaVar             | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total count of regions, total length of regions in bp
-| AreaConst           | aquamarine       5748 14078400 | Fixed track: file name, total count of regions, total length of regions in bp
-| Ncyc                |                                | Number of iterations
-| Real                | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
-| PvalueLarger        | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
-| PvalueSmaller       | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
-| Av                  | 1059.620106                    | Average expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
-| SD                  | 41.342050                      | Standard deviation of expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
-| Zsco                | 142.497526                     | Z-score of expected overlap length between fixed and permuted tracks, Z-score = (Real - Av) / SD, 
-|                     |                                | positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks.
-| -Log10[Pval_approx] | 4411.54                        | P-value in logarithmic scale, estimation the significance of the total overlap length
+| Label                | Value                          | Meaning
+| :---                 |:---                            | :---  
+| AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total count of regions, total length of regions in bp
+| AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total count of regions, total length of regions in bp
+| Ncyc                 |                                | Number of iterations
+| Real                 | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
+| PvalueLarger         | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
+| PvalueSmaller        | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
+| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
+| SD                   | 41.342050                      | Standard deviation of expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
+| Zsco                 | 142.497526                     | Z-score of expected overlap length between fixed and permuted tracks, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
+| -Log10[Pval_approx]  | 4411.54                        | P-value in logarithmic scale, estimation the significance of the total overlap length
