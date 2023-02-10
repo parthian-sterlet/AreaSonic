@@ -66,7 +66,6 @@ Command line arguments:
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example run of AreaSonic for tracks of (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as permuted one. The output [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/as.txt) lists the following results as follows.
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| :---                 |:---                            | :---  
 | AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total count of regions, total length of regions in bp
 | AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total count of regions, total length of regions in bp
 | Ncyc                 |                                | Number of iterations
