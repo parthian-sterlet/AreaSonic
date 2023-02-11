@@ -15,7 +15,7 @@ AreaSonic source code is written in C++ language. To compile exetubables from th
 * In Windiws system any VC++ package, e.g. [Microsoft Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 
 # Input data
-Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Another text files for the list of chromosome names and their lengths are required, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
+Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Note that regions in a BED file are presumed to be sorted in the ascending order of positions, the overlaps between neighbor regions are forbidden. Two input text files for the list of chromosome names and their lengths are required too, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
 
 # Source code
 Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) contains files with AreaSonic source codes, they respect to decribed below separate modules of pipeline.
@@ -67,13 +67,13 @@ Command line arguments:
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example runs of AreaSonic for two tracks: (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 6-th command line argument [as.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length between fixed and permuted tracks. The output file from 5-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows.
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total count of regions, total length of regions in bp
-| AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total count of regions, total length of regions in bp
+| AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total number of regions, total length of regions in bp
+| AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total number of regions, total length of regions in bp
 | Ncyc                 | 5000                           | Number of iterations
 | Real                 | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
 | PvalueLarger         | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
 | PvalueSmaller        | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
-| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
-| SD                   | 41.342050                      | Standard deviation of expected overlap length between fixed and permuted tracks, in kbp (1000 bp)
-| Zsco                 | 142.497526                     | Z-score of expected overlap length between fixed and permuted tracks, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
-| -Log10[Pval]  | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between two tracks
+| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
+| SD                   | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
+| Zsco                 | 142.497526                     | Z-score of expected overlap length, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
+| -Log10[Pval]         | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between two tracks
