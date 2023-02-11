@@ -14,7 +14,7 @@ AreaSonic source code is written in C++ language. To compile exetubables from th
 * In Windiws system any VC++ package, e.g. [Microsoft Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 
 # Input data
-Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns are critically important, they represent a notations of chromosomes and left/right positions of genomic regions. Also text files for the list of chromosome names and their lengths are required, see examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
+Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Another text files for the list of chromosome names and their lengths are required, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
 
 # Source code
 Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) contains files with AreaSonic source codes, they respect to decribed below separate modules of pipeline.
@@ -37,7 +37,7 @@ Modules **Partition of a genome track by separate chromosomes** and **Permutatio
 Lists of command line arguments for all modules are described below
 
 ## 1. Partition of a genome track by separate chromosomes
-This is just a parsing of a bed formatted file according to values in the first column designating chromosomes
+This is a parsing of a bed formatted file according to values in the first column designating chromosome names. For subsequent separate files for all chromosomes are required
 [tabnslolbik_wordget.cpp](https://github.com/parthian-sterlet/areasonic/blob/master/src/tabnslolbik_wordget.cpp)
 
 Command line arguments:
