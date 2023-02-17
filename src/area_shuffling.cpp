@@ -7,7 +7,8 @@
 #include  <ctype.h>
 #define Min(a,b) ((a)>(b))? (b):(a);
 #define Max(a,b) ((a)>(b))? (a):(b);
-#define BINS 1000
+#define BINS 5000
+#define KBASE 1000
 //shuffling for razmetka 
 //input 1st
 //chrX a	b
@@ -500,12 +501,12 @@ int main(int argc, char *argv[])
 		if(n==0)
 		{
 			cats_area0=cats_area;
-			real=(double)cats_area0/1000;
+			real=(double)cats_area0/KBASE;
 		}
 		else
 		{		
 			if(cats_area>=cats_area0)better++;
-			double rand=(double)cats_area/1000;
+			double rand=(double)cats_area/KBASE;
 			rand_av+=rand;
 			rand_sd+=rand*rand;
 			int randi=(int)rand;
@@ -548,8 +549,8 @@ int main(int argc, char *argv[])
 		//pval_approx *= -1;
 		z_score*= -1;
 	}
-	fprintf(out, "AreaVar\t%s\t%d\t%d\tAreaConst\t%s\t%d\t%d\tNcyc\t%d\t", filearea_var_base, total_count_var, string_area_var_len, filearea_const_base, total_count_const, string_area_const_len, n_cyc);
-	fprintf(out, "Real\t%.3f\tPvalueLarger\t%g\tPvalueSmaller\t%f\tAv\t%f\tSD\t%f\tZsco\t%f\t-Log10[Pval]\t%g\n", real, (double)better / n_cyc, 1 - (double)better / n_cyc, rand_av, rand_sd, z_score, pval_approx);
+	fprintf(out, "AreaVar\t%s\t%d\t%d\tAreaConst\t%s\t%d\t%d\tNcyc\t%d\t", filearea_var_base, total_count_var, string_area_var_len / KBASE, filearea_const_base, total_count_const, string_area_const_len / KBASE, n_cyc);
+	fprintf(out, "Real\t%.3f\tAv\t%f\tSD\t%f\tZ\t%f\t-Log10[Pv]\t%g\n", real, rand_av, rand_sd, z_score, pval_approx);//(double)better / n_cyc, 1 - (double)better / n_cyc, //PvalueLarger\t%g\tPvalueSmaller\t%f\t
 	fclose(out);
 	if((outd=fopen(fileod,"at"))==NULL)
 	{
