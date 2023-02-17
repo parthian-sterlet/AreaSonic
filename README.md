@@ -71,7 +71,7 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 | AreaConst            | aquamarine 5748 14078.4        | Fixed track: file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000                           | Number of iterations
 | Real                 | 6950.76                        | Observed overlap length between two input tracks, in kbp
-| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
+| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp
 | SD                   | 41.342050                      | Standard deviation of expected overlap length, in kbp 
 | Z                    | 142.497526                     | Z-score of expected overlap length, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
 | -Log10[Pv]         | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between two tracks
