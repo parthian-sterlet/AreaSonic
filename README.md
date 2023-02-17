@@ -67,12 +67,10 @@ Command line arguments:
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example runs of AreaSonic for two tracks: (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 6-th command line argument [as.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length between fixed and permuted tracks. The output file from 5-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows.
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total number of regions, total length of regions in bp
-| AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total number of regions, total length of regions in bp
+| AreaVar              | chriz_GSM1147251 3863 8906.852  | Permuted track: file name, total number of regions, total length of regions in kbp
+| AreaConst            | aquamarine       5748 14078.4 | Fixed track: file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000                           | Number of iterations
-| Real                 | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
-| PvalueLarger         | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
-| PvalueSmaller        | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
+| Real                 | 6950.76                        | Observed overlap length between two input tracks, in kbp (1000 bp)
 | Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
 | SD                   | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
 | Zsco                 | 142.497526                     | Z-score of expected overlap length, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
