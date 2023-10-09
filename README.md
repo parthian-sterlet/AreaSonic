@@ -24,7 +24,7 @@ Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) 
 * In Linux system: 
 
 git clone https://github.com/parthian-sterlet/areasonic 
-cd areasonic/src/
+cd areasonic/src
 chmod a+x build.sh
 ./build.sh
 
