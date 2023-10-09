@@ -1,7 +1,7 @@
 # AreaSonic
 Estimation of the significance in the total overlap length between two whole genome sets of regions using Monte Carlo simulation and normal distribution modeling
 # Description
-AreaSonic program estimates the significance (P-value) of a total overlap between two sets of while-genome regions (tracks) that described in BED format. The one of the pillars of probability theory, [Central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) proves that the overlap between two tracks should possess the normal distribution due to (a) large number of iterations in Monte Carlo simulation and (b) large counts of regions in both tracks. AreaSonic fits a normal model of the total overlap length, and applies Monte Carlo simulation to estimate the distribution of expected overlap length. AreaSonic takes into account and perfectly models both the distributions of lengths of tracks regions and those of spacers lengths between regions. 
+AreaSonic program estimates the significance (P-value) of a total overlap between two sets of while-genome regions (tracks) that described in BED format. The one of the pillars of probability theory, the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) proves that the overlap between two tracks should possess the normal distribution due to (a) large number of iterations in Monte Carlo simulation and (b) large counts of regions in both tracks. AreaSonic fits the normal model of the total overlap length, and applies Monte Carlo simulation to estimate the distribution of expected overlap length. AreaSonic takes into account and perfectly models both the distributions of lengths of tracks regions and those of spacers lengths between regions. 
 At first step, the observed value 'Real' of total overlap length between two tracks is computed (see Step #1 in scheme below). AreaSonic assigns to the first track the label 'fixed', while the second one is marked as 'permuted'. Now, the first iteration is started: regions and spacers between them for the permuted track are indexed, this gives two arrays {Regions} and {Spacers} (Step #2); indices of each array are swapped (Step #3), and chimeric sequence of regions and spacers is assembled (Step #4); thus, an estimate of the overlap length between the fixed and permuted track is computed at the end of the first itatation (Step #5). Next, hundreeds or thousand iterations are performed (Step #6). These iterations estimate the expected overlap length 'Av' and its standard deviation 'SD' (Step #7). These values are used to compute Z-score estimate as follows: Z-score = (Real - Av) / SD. Positive/negative Z-score imply the enrichment/depletion in the total overlap length between two tracks. Finally, for extremly large Z-scores (Z-score > 14) the asymptotic expansion of the [complementary error function](https://en.wikipedia.org/wiki/Error_function) is used to compute P-value, otherwise it computed directly as the integral for the stadard normal distribution (Step #8). The Areasonic program was successively applied earlier in [Khoroshko et al. (2016)](https://doi.org/10.1371/journal.pone.0157147) and [Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines)
 
 Scheme of AreaSonic algorithm is given below
@@ -23,9 +23,9 @@ Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) 
 # How to compile
 * In Linux system: 
 
-git clone https://github.com/parthian-sterlet/areasonic \
-cd areasonic\src\
-chmod a+x build.sh\
+git clone https://github.com/parthian-sterlet/areasonic 
+cd areasonic/src/
+chmod a+x build.sh
 ./build.sh
 
 * In Windows system:
